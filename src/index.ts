@@ -1,7 +1,7 @@
+import express, { Application, Request, Response, NextFunction } from "express";
 import { neru } from 'neru-alpha';
-import express from 'express';
 
-const app = express();
+const app:Application = express();
 const port = process.env.NERU_APP_PORT;
 
 app.use(express.json());
@@ -15,7 +15,6 @@ app.get('/', async (req, res, next) => {
 });
 
 app.get('/token', async (req, res, next) => {
-    
     const token = neru.createVonageToken({exp: Date.now()+100000000});
     res.json({
         token
