@@ -1,0 +1,17 @@
+project:
+    name: clientsdk-demo-app
+instance:
+    name: dev
+    runtime: nodejs16
+    region: aws.euw1
+    application-id: 8c9c6c96-c99c-4d66-91ba-85cce157e6f8
+    entrypoint:
+        - node
+        - index.js
+debug:
+    name: debug
+    entrypoint:
+        - npx
+        - nodemon
+        - --inspect
+        - index.js
